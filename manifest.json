@@ -1,7 +1,7 @@
 {
 	"id": "tabletop-kit-soundboard",
 	"name": "Tabletop Kit - Soundboard",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"minAppVersion": "1.0.0",
 	"description": "Play crossfading ambient tracks and layered sound effects from a configurable sidebar deck.",
 	"author": "TheRealBernas",
