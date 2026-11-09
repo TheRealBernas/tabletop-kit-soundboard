@@ -1,27 +1,24 @@
 /* Host & Vertical Scroll Container (Ensures overflow-y scrollbar works in Obsidian ItemView) */
-.view-content.rpg-sb-host,
-.rpg-sb-host {
-	padding: 0 !important;
-	height: 100% !important;
-	max-height: 100% !important;
-	min-height: 0 !important;
-	overflow: hidden !important;
-	display: flex !important;
-	flex-direction: column !important;
+.view-content.rpg-sb-host {
+	padding: 0;
+	height: 100%;
+	max-height: 100%;
+	min-height: 0;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
 }
 
-.rpg-sb-scroll-root {
-	flex: 1 1 0 !important;
-	min-height: 0 !important;
+.rpg-sb-host > .rpg-sb-scroll-root {
+	flex: 1 1 0;
+	min-height: 0;
 	height: 100%;
-	overflow-y: auto !important;
-	overflow-x: hidden !important;
+	overflow-y: auto;
+	overflow-x: hidden;
 	padding: 10px;
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-	scrollbar-width: thin;
-	scrollbar-color: var(--scrollbar-thumb-bg, var(--background-modifier-border-hover)) transparent;
 }
 
 .rpg-sb-scroll-root::-webkit-scrollbar {
@@ -154,7 +151,7 @@
 	padding: 1px 6px;
 	border-radius: 999px;
 	background: #18181b;
-	color: #ffffff !important;
+	color: #ffffff;
 	border: 1px solid rgba(255, 255, 255, 0.22);
 	font-size: 0.72rem;
 	font-weight: 700;
@@ -376,7 +373,7 @@ input[type="range"].rpg-bs-range::-moz-range-thumb {
 	margin: 0 auto;
 	border-radius: 7px;
 	background: #18181b;
-	color: #ffffff !important;
+	color: #ffffff;
 	border: 1px solid rgba(255, 255, 255, 0.22);
 	flex-shrink: 0;
 }
@@ -384,8 +381,8 @@ input[type="range"].rpg-bs-range::-moz-range-thumb {
 .rpg-sb-tile-icon svg {
 	width: 17px;
 	height: 17px;
-	color: #ffffff !important;
-	stroke: #ffffff !important;
+	color: #ffffff;
+	stroke: #ffffff;
 }
 
 .rpg-sb-mini-btn {
@@ -497,7 +494,7 @@ input[type="range"].rpg-bs-range::-moz-range-thumb {
 	height: 26px;
 	border-radius: 6px;
 	background: #18181b;
-	color: #ffffff !important;
+	color: #ffffff;
 	border: 1px solid rgba(255, 255, 255, 0.22);
 	flex-shrink: 0;
 }
@@ -505,8 +502,8 @@ input[type="range"].rpg-bs-range::-moz-range-thumb {
 .rpg-sb-list-icon svg {
 	width: 15px;
 	height: 15px;
-	color: #ffffff !important;
-	stroke: #ffffff !important;
+	color: #ffffff;
+	stroke: #ffffff;
 }
 
 .rpg-sb-list-name {
@@ -533,19 +530,19 @@ input[type="range"].rpg-bs-range::-moz-range-thumb {
 	flex-shrink: 0;
 }
 
-.rpg-sb-sq-btn {
-	width: 30px !important;
-	height: 30px !important;
-	min-width: 30px !important;
-	min-height: 30px !important;
-	max-width: 30px !important;
-	max-height: 30px !important;
-	aspect-ratio: 1 / 1 !important;
-	padding: 0 !important;
-	display: inline-flex !important;
+.rpg-sb-list-actions .rpg-sb-sq-btn {
+	width: 30px;
+	height: 30px;
+	min-width: 30px;
+	min-height: 30px;
+	max-width: 30px;
+	max-height: 30px;
+	aspect-ratio: 1 / 1;
+	padding: 0;
+	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	flex: 0 0 30px !important;
+	flex: 0 0 30px;
 	border-radius: 6px;
 	border: 1.5px solid var(--background-modifier-border);
 	background: var(--background-secondary);
@@ -561,12 +558,12 @@ input[type="range"].rpg-bs-range::-moz-range-thumb {
 	stroke-width: 2.4;
 }
 
-.rpg-sb-sq-btn:hover {
+.rpg-sb-list-actions .rpg-sb-sq-btn:hover {
 	border-color: var(--interactive-accent);
 	background: var(--background-modifier-hover);
 }
 
-.rpg-sb-sq-btn.is-loop-on {
+.rpg-sb-list-actions .rpg-sb-sq-btn.is-loop-on {
 	background: var(--interactive-accent);
 	border-color: #ffffff;
 	color: var(--text-on-accent);
@@ -576,11 +573,11 @@ input[type="range"].rpg-bs-range::-moz-range-thumb {
 	stroke: var(--text-on-accent);
 }
 
-.rpg-sb-sq-btn.rpg-sb-count-btn {
-	width: auto !important;
-	max-width: none !important;
-	padding: 0 7px !important;
-	flex: 0 0 auto !important;
+.rpg-sb-list-actions .rpg-sb-sq-btn.rpg-sb-count-btn {
+	width: auto;
+	max-width: none;
+	padding: 0 7px;
+	flex: 0 0 auto;
 	background: #dc3545;
 	color: #ffffff;
 	border-color: #ffffff;
