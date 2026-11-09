@@ -17,7 +17,7 @@ jobs:
   attest:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       id-token: write
       attestations: write
       artifact-metadata: write
@@ -27,19 +27,25 @@ jobs:
         with:
           ref: ${{ github.event.release.tag_name || inputs.tag }}
 
-      - name: Verify release assets match tagged files
+      - name: Upload release assets
         env:
           GH_TOKEN: ${{ github.token }}
           RELEASE_TAG: ${{ github.event.release.tag_name || inputs.tag }}
         run: |
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/release-assets"
+          gh release upload "$RELEASE_TAG" \
+            main.js manifest.json styles.css \
+            --repo "$GITHUB_REPOSITORY" \
+            --clobber
           gh release download "$RELEASE_TAG" \
             --repo "$GITHUB_REPOSITORY" \
             --pattern main.js \
+            --pattern manifest.json \
             --pattern styles.css \
             --dir "$RUNNER_TEMP/release-assets"
           cmp main.js "$RUNNER_TEMP/release-assets/main.js"
+          cmp manifest.json "$RUNNER_TEMP/release-assets/manifest.json"
           cmp styles.css "$RUNNER_TEMP/release-assets/styles.css"
 
       - name: Attest release assets
@@ -47,4 +53,5 @@ jobs:
         with:
           subject-path: |
             main.js
+            manifest.json
             styles.css
